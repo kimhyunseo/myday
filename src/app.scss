@@ -1,0 +1,350 @@
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+//*********************
+:root{
+  --bg-image: url("./images/img-01.jpg");
+  --text-color: #fff;
+  --sub-color: #666;
+  --point-color: #92b1ff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --bg-color: #ffffff;
+}
+.theme-normal {
+  --bg-image: url("./images/img-01.jpg");
+  --text-color: #433a54;
+  --sub-color: #666;
+  --point-color: #ffe677;
+  --point2-color: #edb05b;
+  --shadow-color: rgba(92, 81, 105, 0.5);
+  --bg-color: #ffffff;
+}
+
+.theme-dark {
+  --bg-image: url("./images/img-02.jpg");
+  --text-color: #ddd;
+  --sub-color: #aaa;
+  --point-color: #5c557b;
+  --point2-color:#8477bf;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --bg-color: #3a393d;
+}
+
+.theme-sea {
+  --bg-image: url("./images/img-03.jpg");
+  --text-color: #13506f;
+  --sub-color: #9cc6d7;
+  --point-color: #bdb7ef;
+  --point2-color: #5f62bb;
+  --shadow-color: rgba(68, 118, 154, 0.5);
+  --bg-color: #edeef5;
+}
+
+.theme-forest {
+  --bg-image: url("./images/img-04.jpg");
+  --text-color: #e1e1e1;
+  --sub-color: #29481a;
+  --point-color: #799e53;
+  --point2-color: #92bb59;
+  --shadow-color: rgba(26, 46, 21, 0.8);
+  --bg-color: #667668;
+}
+
+button,
+input {
+  font-family: 'S-CoreDream', sans-serif;
+}
+button{
+  transition: all 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 62.5%; //10px
+  // font-size: 5vw;
+  font-family: 'S-CoreDream', sans-serif;
+}
+
+.app {
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  @media (max-width: 900px) {
+    background-repeat: repeat;
+    height: 140vh;
+  }
+}
+
+//시계
+.time {
+  font-size: clamp(2rem, 10vw, 9rem);
+  font-weight: 700;
+  color: var(--text-color);
+  text-shadow: 0 0 20px var(--shadow-color);
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+.login {
+  h2 {
+    //로그인해주세요
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    font-weight: 500;
+    color: var(--text-color);
+    text-shadow: 0 0 20px var(--shadow-color);
+    text-align: center;
+  }
+  .wrap {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    input {
+      padding: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    button {
+      border: none;
+      background-color: var(--point-color);
+      box-shadow: 0 0 10px var(--shadow-color);
+      color: var(--text-color);
+      padding: 0 2rem;
+      border-radius: 0.5rem;
+      &:hover{
+        filter: brightness(110%);
+      }
+    }
+  }
+}
+.weather-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+  section {
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: clamp(0.3rem, 3vw, 1.3rem);
+      color: var(--text-color);
+      font-weight: 500;
+    }
+  }
+  img {
+    padding: 10px;
+  }
+}
+
+//명언
+.quote {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  width: 50vw;
+  p {
+    color: var(--text-color);
+    font-size: clamp(0.3rem, 3vw, 1.3rem);
+    text-align: right;
+    word-break: keep-all;
+    font-weight: 500;
+  }
+}
+
+.mainpage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    // ""님 반가워요
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    color: var(--text-color);
+    text-shadow: 0 0 20px var(--shadow-color);
+    font-weight: 500;
+  }
+  .wrap {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    button {
+      border: none;
+      background-color: var(--point-color);
+      box-shadow: 0 0 10px var(--shadow-color);
+      color: var(--text-color);
+      padding: 0.7rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      &:hover{
+        filter: brightness(110%);
+      }
+    }
+  }
+}
+
+.mainpage .bottom-wrap {
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+  width: 70%;
+  flex-direction: row;
+  
+  @media (max-width: 900px) {
+    flex-direction: column;
+    width: 90%;
+  }
+}
+.mainpage .bottom-wrap .todoform {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 10px var(--shadow-color);
+  flex: 1.5;
+  min-height: 20rem;
+  p{
+    //할일이 없습니다
+    font-size: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 6rem;
+  }
+}
+.calendar-wrap {
+  flex: 1;
+}
+.calendar-box{
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px var(--shadow-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+//todo
+
+.todo {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  input {
+    padding: 1rem 0;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    flex: 1;
+    background-color: var(--bg-color);
+    &::placeholder{
+      color: var(--text-color);
+    }
+  }
+  button {
+    border: none;
+    background-color: var(--point-color);
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    padding: 0 2rem;
+    font-size: 0.8rem;
+      &:hover{
+        filter: brightness(110%);
+      }
+  }
+}
+
+.todolist {
+  
+  list-style: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 25rem;      // 고정 or 최대 높이
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  li {
+    padding: 1rem;
+    font-size: 1rem;
+    position: relative;
+    border-bottom: 1px solid var(--point-color);
+    background-color: var(--bg-color);
+    &:last-child{
+      border: none;
+    }
+    span {
+      padding: 0 1rem;
+      color: var(--text-color);
+    }
+    button {
+      border: none;
+      background-color: var(--point-color);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      color: var(--text-color);
+      border-radius: 0.3rem;
+      padding: 0.5rem 1rem;
+      right: 0;
+      font-size: 0.8rem;
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      &:hover{
+        filter: brightness(110%);
+      }
+    }
+  }
+}
+.theme-buttons{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  button{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--point-color);
+    color: var(--text-color);
+    font-size: 0.6rem;
+    &:hover{
+      filter: brightness(110%);
+      transform: scale(1.1);
+    }
+  }
+}
